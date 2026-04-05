@@ -5,7 +5,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-let player;
+let player;  /* player recebe as informações assim que o personagem é criado no "newGame". */
 
 const newGame = require("./systems/newGame");
 const loadGame = require("./systems//loadGame");
@@ -50,6 +50,7 @@ function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador esco
 
 function menuJogo() { /* Criado o menu principal do jogo. */
   
+  console.clear();  
   console.log("1. Explorar ⚔️");
   console.log("2. Inventário 🎒");
   console.log("3. Status do personagem 👤");
@@ -62,16 +63,19 @@ function menuJogo() { /* Criado o menu principal do jogo. */
         switch (opcao) {
             
             case 1: 
-                explore();
+                explore(menuJogo, player, rl);
                 break;
         
             case 2:
-                inventory();
+                inventory(menuJogo, player, rl);
                 break;
 
             case 3:
-                playerStatus(menuJogo, player);
+                playerStatus(menuJogo, player, rl);
                 break;
+
+            case 4:
+                rl.close();
             
             default:
                 console.log("\nOpção inválida, tente novamente!\n");

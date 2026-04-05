@@ -6,6 +6,7 @@ class PlayerGame {
         this.attack = 15
         this.defense = 10
         this.gold = 0
+        this.xp = 0
         this.inventory = []
     }
 }

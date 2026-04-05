@@ -8,7 +8,13 @@
     {"name": "Ogro",
      "hp": 30,
      "attack": 12,
-     "xp": 7
+     "xp": 15
+    },
+
+    {"name": "Lobo selvagem",
+     "hp": 25,
+     "attack": 10,
+     "xp": 10
     }
 
 ]

@@ -2,4 +2,4 @@ function pause(rl, next) {  /* Função criada para utilizar um pause após fina
     rl.question("\n⏎ Pressione ENTER para continuar...", () => next());
 }
 
-module.exports = pause;
+module.exports = pause;  /* Exportando a função para ser utilizada nas outras funções. */

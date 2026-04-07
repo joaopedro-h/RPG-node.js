@@ -11,11 +11,13 @@ const newGame = require("./systems/newGame");
 const loadGame = require("./systems//loadGame");
 const explore = require("./systems/explore");
 const inventory = require("./systems/inventory");
-const playerStatus = require("./systems/playerStatus")
+const playerStatus = require("./systems/playerStatus");
+const enemyEncounter = require('./systems/enemyEncounter');
 
 
 function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador escolhe se deseja iniciar um novo jogo ou carregar um jogo já criado. */
 
+    console.clear();
     console.log("=================");
     console.log("⚔️  RPG TERMINAL")
     console.log("=================");
@@ -56,14 +58,14 @@ function menuJogo() { /* Criado o menu principal do jogo. */
   console.log("3. Status do personagem 👤");
   console.log("4. Sair ❌\n");
 
-    rl.question(`\nEscolha uma opção: `, (opcao) => {
+    rl.question(`Escolha uma opção: `, (opcao) => {
         
         opcao = Number(opcao); /*Feito a conversão de string para número inteiro para que fosse compatível no case.*/
 
         switch (opcao) {
             
             case 1: 
-                explore(menuJogo, player, rl);
+                explore(menuJogo, player, rl, enemyEncounter);
                 break;
         
             case 2:
@@ -75,7 +77,8 @@ function menuJogo() { /* Criado o menu principal do jogo. */
                 break;
 
             case 4:
-                rl.close();
+                menuInicial();
+                break;
             
             default:
                 console.log("\nOpção inválida, tente novamente!\n");

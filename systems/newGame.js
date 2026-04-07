@@ -1,4 +1,5 @@
 const PlayerGame = require("../classes/player");  /* Importa os dados da classe PlayerGame, aonde contém as informações do jogador, sendo definido somente o nome na função. */
+const pause = require("./pause");  /* Importando a função "pause" para que seja usada na função "newGame" */
 
 function newGame(rl, menuJogo, savePlayer) {
     
@@ -6,6 +7,7 @@ function newGame(rl, menuJogo, savePlayer) {
 
         const player = new PlayerGame(nomePersonagem);
 
+        console.clear();
         console.log("\nPersonagem criado!");
         console.log(`👤 Nome: ${player.name}`);
         console.log(`❤️  HP: ${player.hp}`);
@@ -19,9 +21,9 @@ function newGame(rl, menuJogo, savePlayer) {
         savePlayer(player); /* Serve para enviar o jogador criado dentro do newGame para o index.js. */
         /* Aonde dentro do index.js foi passado como parâmetro "newPlayer" */
 
-        menuJogo();
+        pause(rl, menuJogo);
 
     });
 }
 
-module.exports = newGame;  /* Exporta a funcão para index.js */
+module.exports = newGame;  /* Exporta a funcão para "index.js" */

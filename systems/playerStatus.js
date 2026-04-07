@@ -2,6 +2,7 @@ const pause = require("./pause");
 
 function playerStatus(menuJogo, player, rl) {
         
+        console.clear();
         console.log("\n===== STATUS DO PERSONAGEM =====\n");
         console.log(`👤 Nome: ${player.name}`);
         console.log(`❤️  HP: ${player.hp}`);

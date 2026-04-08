@@ -1,12 +1,13 @@
-const enemies = require("../data/enemies.json")  /* Feito a importação dos inimigos criados para a exploração, a partir do "enemies.json" */
+const Enemy = require("../classes/enemy");
+const enemiesData = require("../data/enemies.json")  /* Feito a importação dos inimigos criados para a exploração, a partir do "enemies.json" */
 const battle = require("./battle");  /* Importando a função "battle.js" (e as demais abaixo) para ser utilizada na função "enemyEncounter.js" */
 const escape = require("./escape");  
 const pause = require("./pause");  
 
 function enemyEncounter(menuJogo, player, rl) {
 
-    const randomEnemy = enemies[Math.floor(Math.random() * enemies.length)];  /* É gerado um inimigo aleátorio que exista dentro do "enemies.json". */
-    const enemy = {...randomEnemy};  /* Foi feito uma cópia usando spread operator do inimigo gerado, para que fosse alterado o contéudo original dentro do "enemies.json". */
+    const randomEnemyData = enemiesData[Math.floor(Math.random() * enemiesData.length)];  /* É gerado um inimigo aleátorio que exista dentro do "enemies.json". */
+    const enemy = new Enemy(randomEnemyData.name, randomEnemyData.hp, randomEnemyData.attack, randomEnemyData.xp);  /* Gerado uma nova instância da classe "Enemy". */
     
     console.log(`⚔️  Você encontrou um ${enemy.name}  ⚔️`);
             
@@ -26,7 +27,7 @@ function enemyEncounter(menuJogo, player, rl) {
                         break;
                         
                     case 2:
-                        escape(menuJogo, rl, pause);
+                        escape(menuJogo, rl, pause, player);
                         break;
 
                     default:

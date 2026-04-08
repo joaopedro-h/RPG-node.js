@@ -1,6 +1,21 @@
-function escape(menuJogo, rl, pause) {
+function escape(menuJogo, rl, pause, player) {
     
-    console.log("Você fugiu! 🏃🏻‍♂️‍➡️");     
+    let goldLost = Math.floor(Math.random() * 10) + 1 ;  /* Gera um número aleatório entre 1 e 10, que vai ser a quantidade de ouro perdida na fuga. */
+
+    console.clear();
+    console.log("Você fugiu! 🏃🏻‍♂️‍➡️");
+    player.gold -= goldLost;
+
+    if (player.gold <= 0) {
+        player.gold = 0;
+        console.log("Você perdeu todas as moedas restantes de ouro nessa fuga!");
+        
+    }else{
+        console.log(`Ops.. deixou cair ${goldLost} moedas de ouro na fuga. 💰`);
+    }
+
+    
+    
     pause(rl, menuJogo);
 }
 

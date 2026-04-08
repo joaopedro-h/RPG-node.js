@@ -20,13 +20,13 @@ function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador esco
     console.clear();
     console.log("=================");
     console.log("⚔️  RPG TERMINAL")
-    console.log("=================");
+    console.log("=================\n");
 
     console.log("1 - Novo jogo.");
     console.log("2 - Carregar jogo.");
     console.log("3 - Sair.");
 
-    rl.question(`Escolha uma opção: `, (opcao) => {
+    rl.question(`\nEscolha uma opção: `, (opcao) => {
 
         opcao = Number(opcao);
 

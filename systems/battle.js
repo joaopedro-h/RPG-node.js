@@ -1,17 +1,19 @@
 function battle(menuJogo, player, rl, enemy, turn, pause) {
 
-        console.log(`Você atacou o ${enemy.name}! 💥`);
+        console.log(`\nVocê atacou o ${enemy.name}! 💥\n`);
         
         enemy.hp -= player.attack;
                     
         if (enemy.hp <= 0) {  /* Caso o inimigo chegue a 0 de vida ele é derrotado, dropando XP ao jogador. */
             console.log(`Você derrotou o ${enemy.name}! 🏆` );
+            console.log(`XP obtido na luta: ${enemy.xp} ⭐ `);
+            
             player.xp += enemy.xp;
             pause(rl, menuJogo);
             return;     
         }
 
-        console.log(`O ${enemy.name} te atacou! 💥`);
+        console.log(`O ${enemy.name} te atacou! 💥\n`);
 
         player.hp -= enemy.attack;
                     

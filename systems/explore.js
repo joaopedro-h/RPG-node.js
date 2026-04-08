@@ -1,5 +1,6 @@
 const enemyEncounter = require("./enemyEncounter");  /* Importando a função "enemyEncounter" (e as demais abaixo) para ser utilizada na função "explore.js" */
 const gold = require("./gold");
+const itemFound = require("./itemFound");
 const pause = require("./pause");
 
 function explore(menuJogo, player, rl) {
@@ -18,12 +19,11 @@ function explore(menuJogo, player, rl) {
             break;
     
         case 1:
-            gold(menuJogo,player, rl, pause);
+            gold(menuJogo, player, rl, pause);
             break;
 
         case 2:
-            console.log("\nVocê encontrou um item! 🗝️\n\n");
-            pause(rl, menuJogo);
+            itemFound(menuJogo, player, rl, pause);
             break;
 
         case 3:

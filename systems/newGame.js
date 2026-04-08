@@ -8,7 +8,7 @@ function newGame(rl, menuJogo, savePlayer) {
         const player = new PlayerGame(nomePersonagem);
 
         console.clear();
-        console.log("\nPersonagem criado!");
+        console.log("Personagem criado!\n");
         console.log(`👤 Nome: ${player.name}`);
         console.log(`❤️  HP: ${player.hp}`);
         console.log(`❤️  HP máximo: ${player.maxHp}`);

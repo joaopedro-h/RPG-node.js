@@ -11,7 +11,6 @@ function playerStatus(menuJogo, player, rl) {
         console.log(`🛡️  Defesa: ${player.defense}`);
         console.log(`💰 Ouro: ${player.gold}`);  
         console.log(`⭐ XP: ${player.xp}`); 
-        console.log(`🎒 Inventário: ${player.inventory}\n`);
         
         pause(rl, menuJogo);
 }

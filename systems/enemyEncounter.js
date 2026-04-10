@@ -1,8 +1,10 @@
 const Enemy = require("../classes/enemy");
 const enemiesData = require("../data/enemies.json")  /* Feito a importação dos inimigos criados para a exploração, a partir do "enemies.json" */
 const battle = require("./battle");  /* Importando a função "battle.js" (e as demais abaixo) para ser utilizada na função "enemyEncounter.js" */
+const useItem = require("./useItem");
 const escape = require("./escape");  
 const pause = require("./pause");  
+
 
 function enemyEncounter(menuJogo, player, rl) {
 
@@ -15,7 +17,8 @@ function enemyEncounter(menuJogo, player, rl) {
         function turn() {
             
             console.log("1. Atacar");
-            console.log("2. Fugir");
+            console.log("2. Usar item");
+            console.log("3. Fugir");
             
             rl.question(`\nEscolha sua acão: `, (acao) => {
         
@@ -27,6 +30,10 @@ function enemyEncounter(menuJogo, player, rl) {
                         break;
                         
                     case 2:
+                        useItem();
+                        break;
+
+                    case 3:
                         escape(menuJogo, rl, pause, player);
                         break;
 

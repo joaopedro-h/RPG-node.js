@@ -7,4 +7,4 @@ class Enemy {
     }
 }
 
-module.exports = Enemy
+module.exports = Enemy;

@@ -1,6 +1,8 @@
 [
-    {"name": "Poção de cura",
+    {"name": "Poção de cura 🧪",
      "type": "heal",
-     "value": 20
+     "value": 20,
+     "quantity": 1,
+     "description": "Cura 20 de HP ❤️"
     }
 ]

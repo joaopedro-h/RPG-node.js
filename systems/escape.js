@@ -14,8 +14,6 @@ function escape(menuJogo, rl, pause, player) {
         console.log(`Ops.. deixou cair ${goldLost} moedas de ouro na fuga. 💰`);
     }
 
-    
-    
     pause(rl, menuJogo);
 }
 

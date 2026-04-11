@@ -30,7 +30,7 @@ function enemyEncounter(menuJogo, player, rl) {
                         break;
                         
                     case 2:
-                        useItem();
+                        useItem(menuJogo, player, rl, pause);
                         break;
 
                     case 3:

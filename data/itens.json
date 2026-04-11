@@ -1,8 +1,16 @@
 [
-    {"name": "Poção de cura 🧪",
+    {"name": "Poção de cura pequena 🧪",
      "type": "heal",
      "value": 20,
      "quantity": 1,
      "description": "Cura 20 de HP ❤️"
+    },
+
+    {"name": "Amuleto de vida ❤️ ",
+     "type": "acessory",
+     "value": 5,
+     "quantity": 1,
+     "description": "Aumenta 5 de HP máximo 🆙❤️"
     }
+
 ]

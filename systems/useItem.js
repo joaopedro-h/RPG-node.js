@@ -1,14 +1,12 @@
-const battle = require("./battle");
-
-function useItem(menuJogo, player, rl, pause) {
-    
+function useItem(next, player, rl, pause) { 
+    /* Foi passado um parâmetro de "next" pois a função será usada em dois momentos diferentes, será usada na batalha e a função passada será "turn()" e também será usada no menu e a função passada será "menuJogo()". */
 
     console.clear();
     console.log("🎒 INVENTÁRIO\n");
 
     if (player.inventory.length === 0) {  /* if para caso o inventário estiver vazio aparecer a mensagem informando sobre não ter nenhum item. */
         console.log("Seu inventário está vazio! 🚫");
-        battle();
+        pause(rl, next);
         return;
 
     }else{
@@ -25,12 +23,12 @@ function useItem(menuJogo, player, rl, pause) {
 
         const i = Number(usedItem) - 1; /* Transforma em índice. */
 
-        const item = player.inventory[i];
+        const item = player.inventory[i];  /* Variável "item" se torna o item do inventário da posição índice "i". */
 
 
-        if (!item) {
+        if (!item) { /* Significa = se o item NÃO existir o "if" é executado. */
             console.log("Item inválido! ❌");
-            pause(rl, menuJogo);
+            pause(rl, next);
             return;
         }
         
@@ -44,7 +42,7 @@ function useItem(menuJogo, player, rl, pause) {
 
             console.log(`Você usou ${item.name} e recuperou ${item.value} de HP ❤️`)
 
-        } else if (item.type === "acessory"){
+        } else if (item.type === "accessory"){
 
             player.maxHp += item.value;
 
@@ -58,10 +56,9 @@ function useItem(menuJogo, player, rl, pause) {
             player.inventory.splice(i, 1);
         }
 
-        pause(rl, menuJogo);
+        pause(rl, next);
 
     });
-
 
 }
 

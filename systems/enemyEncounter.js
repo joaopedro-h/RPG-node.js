@@ -16,9 +16,9 @@ function enemyEncounter(menuJogo, player, rl) {
         turn();
         function turn() {
             
-            console.log("1. Atacar");
-            console.log("2. Usar item");
-            console.log("3. Fugir");
+            console.log("1. Atacar ⚔️");
+            console.log("2. Usar item ⚙️");
+            console.log("3. Fugir 🏃🏻💨");
             
             rl.question(`\nEscolha sua acão: `, (acao) => {
         
@@ -30,7 +30,7 @@ function enemyEncounter(menuJogo, player, rl) {
                         break;
                         
                     case 2:
-                        useItem(menuJogo, player, rl, pause);
+                        useItem(turn, player, rl, pause);
                         break;
 
                     case 3:
@@ -38,6 +38,7 @@ function enemyEncounter(menuJogo, player, rl) {
                         break;
 
                     default:
+                        console.clear();
                         console.log("Opcão inválida...");
                         turn();
                         break;

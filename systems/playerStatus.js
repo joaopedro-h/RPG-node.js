@@ -1,6 +1,4 @@
-const pause = require("./pause");
-
-function playerStatus(menuJogo, player, rl) {
+function playerStatus(menuJogo, player, rl, pause) {
         
         console.clear();
         console.log("\n===== STATUS DO PERSONAGEM =====\n");

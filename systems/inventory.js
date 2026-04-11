@@ -1,6 +1,4 @@
-const pause = require("./pause");
-
-function inventory(menuJogo, player, rl) {
+function inventory(menuJogo, player, rl, pause) {
         
     console.clear();
     console.log("🎒 INVENTÁRIO\n");

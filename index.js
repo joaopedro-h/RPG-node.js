@@ -7,12 +7,13 @@ const rl = readline.createInterface({
 
 let player;  /* player recebe as informações assim que o personagem é criado no "newGame". */
 
+const pause = require("./systems/pause");
 const newGame = require("./systems/newGame");
 const loadGame = require("./systems//loadGame");
 const explore = require("./systems/explore");
 const inventory = require("./systems/inventory");
 const playerStatus = require("./systems/playerStatus");
-const enemyEncounter = require('./systems/enemyEncounter');
+const useItem = require('./systems/useItem');
 
 
 function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador escolhe se deseja iniciar um novo jogo ou carregar um jogo já criado. */
@@ -22,9 +23,9 @@ function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador esco
     console.log("⚔️  RPG TERMINAL")
     console.log("=================\n");
 
-    console.log("1 - Novo jogo.");
-    console.log("2 - Carregar jogo.");
-    console.log("3 - Sair.");
+    console.log("1 - Novo jogo. 💡");
+    console.log("2 - Carregar jogo. ⏳");
+    console.log("3 - Sair. ❌");
 
     rl.question(`\nEscolha uma opção: `, (opcao) => {
 
@@ -55,8 +56,9 @@ function menuJogo() { /* Criado o menu principal do jogo. */
   console.clear();  
   console.log("1. Explorar ⚔️");
   console.log("2. Inventário 🎒");
-  console.log("3. Status do personagem 👤");
-  console.log("4. Sair ❌\n");
+  console.log("3. Usar item ⚙️");
+  console.log("4. Status do personagem 👤");
+  console.log("5. Sair ❌\n");
 
     rl.question(`Escolha uma opção: `, (opcao) => {
         
@@ -65,18 +67,22 @@ function menuJogo() { /* Criado o menu principal do jogo. */
         switch (opcao) {
             
             case 1: 
-                explore(menuJogo, player, rl, enemyEncounter);
+                explore(menuJogo, player, rl, pause);
                 break;
         
             case 2:
-                inventory(menuJogo, player, rl);
+                inventory(menuJogo, player, rl, pause);
                 break;
 
             case 3:
-                playerStatus(menuJogo, player, rl);
+                useItem(menuJogo, player, rl, pause);
                 break;
 
             case 4:
+                playerStatus(menuJogo, player, rl, pause);
+                break;
+
+            case 5:
                 menuInicial();
                 break;
             

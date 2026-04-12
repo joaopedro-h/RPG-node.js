@@ -9,6 +9,7 @@ function playerStatus(menuJogo, player, rl, pause) {
         console.log(`🛡️  Defesa: ${player.defense}`);
         console.log(`💰 Ouro: ${player.gold}`);  
         console.log(`⭐ XP: ${player.xp}`); 
+        console.log(`🏆 Nível: ${player.level}`);
         
         pause(rl, menuJogo);
 }

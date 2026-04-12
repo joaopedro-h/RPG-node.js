@@ -14,7 +14,20 @@ const explore = require("./systems/explore");
 const inventory = require("./systems/inventory");
 const playerStatus = require("./systems/playerStatus");
 const useItem = require('./systems/useItem');
+    
+const fs = require("fs");
 
+function saveData() {
+    
+    const data = JSON.stringify(player, null, 2);
+    fs.writeFileSync("./data/player.json", data);
+}
+
+function loadData() {
+    
+    const data = fs.readFileSync("./data/player.json", "utf-8");
+    player = JSON.parse(data);
+}
 
 function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador escolhe se deseja iniciar um novo jogo ou carregar um jogo já criado. */
 
@@ -32,12 +45,12 @@ function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador esco
         opcao = Number(opcao);
 
         if (opcao === 1) {
-            newGame(rl, menuJogo, (newPlayer) => {
+            newGame(rl, menuJogo, saveData, (newPlayer) => {
                 player = newPlayer;
             });
 
         }else if (opcao === 2) {
-            loadGame(menuJogo);
+            loadGame(menuJogo, loadData);
 
         }else if (opcao === 3) {
             console.log("Saindo do jogo...");

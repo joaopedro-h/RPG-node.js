@@ -8,9 +8,24 @@ const pause = require("./pause");
 
 function enemyEncounter(menuJogo, player, rl) {
 
-    const randomEnemyData = enemiesData[Math.floor(Math.random() * enemiesData.length)];  /* É gerado um inimigo aleátorio que exista dentro do "enemies.json". */
-    const enemy = new Enemy(randomEnemyData.name, randomEnemyData.hp, randomEnemyData.attack, randomEnemyData.xp);  /* Gerado uma nova instância da classe "Enemy". */
-    
+    let enemy; /* Variável que irá receber o inimigo criado. */
+    const rand = Math.random(); /* Math.random gera um número entre 0 e 0.99. */
+    let cumulativeChance = 0;  /* Irá acumular as chances dos inimigos. */
+
+    for (const enemyData of enemiesData) { /* "enemyData" é uma variável temporária (representa cada inimigo do JSON, ex:[0] = Goblin, [1] = Ogro, etc) */  /* "enemiesData" representa a lista de inimigos JSON. */
+        cumulativeChance += enemyData.chance; /* A cada looping é adicionado a chance dos inimigos a variável "cumulativeChance". */
+
+        if (rand < cumulativeChance) {
+            enemy = new Enemy (
+                enemyData.name,
+                enemyData.hp,
+                enemyData.attack,
+                enemyData.xp
+            );
+            break; /* break para o loop imediatamente, evitando trocar o inimigo. */
+        }
+    }
+
     console.log(`⚔️  Você encontrou um ${enemy.name}  ⚔️`);
             
         turn();

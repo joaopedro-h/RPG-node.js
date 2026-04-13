@@ -1,4 +1,4 @@
-function battle(menuJogo, player, rl, enemy, turn, pause) {
+function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
 
         const minAttackPlayer = Math.floor(player.attack / 2); /* Define o ataque mínimo, aonde é pega o ataque máximo e divide por 2. */
         const maxAttackPlayer = player.attack; /* Ataque máximo do jogador. */
@@ -27,6 +27,7 @@ function battle(menuJogo, player, rl, enemy, turn, pause) {
                 player.attack += 3;
             }
 
+            saveData();
             pause(rl, menuJogo);
             return;     
         }
@@ -43,10 +44,13 @@ function battle(menuJogo, player, rl, enemy, turn, pause) {
             console.clear();  
             player.hp = 0;
             console.log(`Você foi morto pelo ${enemy.name}! 💀` );
+            
+            saveData();
             pause(rl, menuJogo); 
             return;     
         }
 
+        saveData();
         turn();
 }
 

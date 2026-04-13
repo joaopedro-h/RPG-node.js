@@ -2,7 +2,7 @@ const enemyEncounter = require("./enemyEncounter");  /* Importando a função "e
 const gold = require("./gold");
 const itemFound = require("./itemFound");
 
-function explore(menuJogo, player, rl, pause) {
+function explore(menuJogo, player, rl, pause, saveData) {
     
     console.clear();
     console.log("=============================");
@@ -25,15 +25,15 @@ function explore(menuJogo, player, rl, pause) {
     switch (event) {
         
         case 0:
-            enemyEncounter(menuJogo, player, rl);
+            enemyEncounter(menuJogo, player, rl, saveData);
             break;
     
         case 1:
-            gold(menuJogo, player, rl, pause);
+            gold(menuJogo, player, rl, pause, saveData);
             break;
 
         case 2:
-            itemFound(menuJogo, player, rl, pause);
+            itemFound(menuJogo, player, rl, pause, saveData);
             break;
 
         case 3:

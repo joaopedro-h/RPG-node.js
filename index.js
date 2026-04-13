@@ -5,7 +5,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-let player;  /* player recebe as informações assim que o personagem é criado no "newGame". */
+//let player;  /* player recebe as informações assim que o personagem é criado no "newGame". */
 
 const pause = require("./systems/pause");
 const newGame = require("./systems/newGame");
@@ -20,13 +20,8 @@ const fs = require("fs");
 function saveData() {
     
     const data = JSON.stringify(player, null, 2);
-    fs.writeFileSync("./data/player.json", data);
-}
-
-function loadData() {
-    
-    const data = fs.readFileSync("./data/player.json", "utf-8");
-    player = JSON.parse(data);
+    const path = `./data/${player.name}.json`; /* Usa o nome do jogador para identificar o arquivo JSON. */
+    fs.writeFileSync(path, data);
 }
 
 function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador escolhe se deseja iniciar um novo jogo ou carregar um jogo já criado. */
@@ -50,7 +45,7 @@ function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador esco
             });
 
         }else if (opcao === 2) {
-            loadGame(menuJogo, loadData);
+            loadGame(menuJogo, menuInicial, rl, pause);
 
         }else if (opcao === 3) {
             console.log("Saindo do jogo...");
@@ -62,7 +57,6 @@ function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador esco
         }
     });
 }
-
 
 function menuJogo() { /* Criado o menu principal do jogo. */
   
@@ -80,7 +74,7 @@ function menuJogo() { /* Criado o menu principal do jogo. */
         switch (opcao) {
             
             case 1: 
-                explore(menuJogo, player, rl, pause);
+                explore(menuJogo, player, rl, pause, saveData, loadGame);
                 break;
         
             case 2:
@@ -88,11 +82,11 @@ function menuJogo() { /* Criado o menu principal do jogo. */
                 break;
 
             case 3:
-                useItem(menuJogo, player, rl, pause);
+                useItem(menuJogo, player, rl, pause, saveData, loadGame);
                 break;
 
             case 4:
-                playerStatus(menuJogo, player, rl, pause);
+                playerStatus(menuJogo, player, rl, pause, loadGame);
                 break;
 
             case 5:
@@ -108,10 +102,3 @@ function menuJogo() { /* Criado o menu principal do jogo. */
 }
 
 menuInicial();
-
-
-
-
-
-
-

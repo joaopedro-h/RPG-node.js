@@ -6,7 +6,7 @@ const escape = require("./escape");
 const pause = require("./pause");  
 
 
-function enemyEncounter(menuJogo, player, rl) {
+function enemyEncounter(menuJogo, player, rl, saveData) {
 
     let enemy; /* Variável que irá receber o inimigo criado. */
     const rand = Math.random(); /* Math.random gera um número entre 0 e 0.99. */
@@ -41,15 +41,15 @@ function enemyEncounter(menuJogo, player, rl) {
                 
                 switch (acao) {
                     case 1:
-                        battle(menuJogo, player, rl, enemy, turn, pause);
+                        battle(menuJogo, player, rl, enemy, turn, pause, saveData);
                         break;
                         
                     case 2:
-                        useItem(turn, player, rl, pause);
+                        useItem(turn, player, rl, pause, saveData);
                         break;
 
                     case 3:
-                        escape(menuJogo, rl, pause, player);
+                        escape(menuJogo, rl, pause, player, saveData);
                         break;
 
                     default:

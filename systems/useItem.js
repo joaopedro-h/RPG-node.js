@@ -1,4 +1,4 @@
-function useItem(next, player, rl, pause) { 
+function useItem(next, player, rl, pause, saveData) { 
     /* Foi passado um parâmetro de "next" pois a função será usada em dois momentos diferentes, será usada na batalha e a função passada será "turn()" e também será usada no menu e a função passada será "menuJogo()". */
 
     console.clear();
@@ -56,6 +56,7 @@ function useItem(next, player, rl, pause) {
             player.inventory.splice(i, 1);
         }
 
+        saveData();
         pause(rl, next);
 
     });

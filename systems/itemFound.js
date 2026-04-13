@@ -1,7 +1,7 @@
 const Item = require("../classes/item")  /* Importa os dados da classe Item, aonde contém as informações base do item, em seguida o item é gerado uma nova instância. */
 const itensData = require("../data/itens.json");  /* Feito a importação dos itens criados para a exploração, a partir do "itens.json" */
 
-function itemFound(menuJogo, player, rl, pause) {
+function itemFound(menuJogo, player, rl, pause, saveData) {
     
     const randomItem = itensData[Math.floor(Math.random() * itensData.length)];
     const itemFound = new Item (randomItem.name, randomItem.type, randomItem.value, randomItem.quantity, randomItem.description); /* Gerado uma nova instância da classe "Item". */
@@ -19,8 +19,9 @@ function itemFound(menuJogo, player, rl, pause) {
     } else {  /* Se o item NÃO existir é adicionado o item por completo. */
 
         player.inventory.push(itemFound); 
-    }
+    }   
 
+    saveData();
     pause(rl, menuJogo);
 
 }

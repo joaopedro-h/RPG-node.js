@@ -1,4 +1,4 @@
-function escape(menuJogo, rl, pause, player) {
+function escape(menuJogo, rl, pause, player, saveData) {
     
     let goldLost = Math.floor(Math.random() * 10) + 1 ;  /* Gera um número aleatório entre 1 e 10, que vai ser a quantidade de ouro perdida na fuga. */
 
@@ -14,6 +14,7 @@ function escape(menuJogo, rl, pause, player) {
         console.log(`Ops.. deixou cair ${goldLost} moedas de ouro na fuga. 💰`);
     }
 
+    saveData();
     pause(rl, menuJogo);
 }
 

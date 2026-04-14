@@ -6,7 +6,7 @@ function gold(menuJogo, player, rl, pause, saveData) {
     console.log(`\nVocê achou ${goldFound} moedas de ouro! 💰\n\n`);
 
     saveData();
-    pause(rl, menuJogo);
+    pause(rl, () => menuJogo(player));
 }
 
 module.exports = gold;  /* Exportando a função para ser utilizada no "explore.js" */

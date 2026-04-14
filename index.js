@@ -5,7 +5,6 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-//let player;  /* player recebe as informações assim que o personagem é criado no "newGame". */
 
 const pause = require("./systems/pause");
 const newGame = require("./systems/newGame");
@@ -18,10 +17,11 @@ const useItem = require('./systems/useItem');
 const fs = require("fs");
 
 function saveData() {
-    
-    const data = JSON.stringify(player, null, 2);
-    const path = `./data/${player.name}.json`; /* Usa o nome do jogador para identificar o arquivo JSON. */
-    fs.writeFileSync(path, data);
+    if (!player) return; /* Se o jogador não existir, a função não é executada, não salvando nada. */
+
+    const data = JSON.stringify(player, null, 2); /* Pega o objeto "player" e transforma em string JSON, ficando armazenado na variável "data - (dados)." */
+    const path = `./data/${player.name}.json`; /* Usa o nome do jogador para definir o arquivo JSON, cada player é um arquivo diferente. */  /* "path" é o caminho do arquivo. */
+    fs.writeFileSync(path, data); /* Cria o arquivo se não existir e sobrescreve caso já exista. */
 }
 
 function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador escolhe se deseja iniciar um novo jogo ou carregar um jogo já criado. */
@@ -53,12 +53,12 @@ function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador esco
 
         }else{
             console.log("Opção inválida!");
-            menuInicial();
+            menuInicial(player);
         }
     });
 }
 
-function menuJogo() { /* Criado o menu principal do jogo. */
+function menuJogo(player) { /* Criado o menu principal do jogo. */
   
   console.clear();  
   console.log("1. Explorar ⚔️");
@@ -82,7 +82,7 @@ function menuJogo() { /* Criado o menu principal do jogo. */
                 break;
 
             case 3:
-                useItem(menuJogo, player, rl, pause, saveData, loadGame);
+                useItem(() => menuJogo(player), player, rl, pause, saveData);
                 break;
 
             case 4:
@@ -90,12 +90,12 @@ function menuJogo() { /* Criado o menu principal do jogo. */
                 break;
 
             case 5:
-                menuInicial();
+                menuInicial(player);
                 break;
             
             default:
                 console.log("\nOpção inválida, tente novamente!\n");
-                menuJogo();
+                menuJogo(player);
         }
     });
 

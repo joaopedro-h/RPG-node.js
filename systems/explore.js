@@ -38,7 +38,7 @@ function explore(menuJogo, player, rl, pause, saveData) {
 
         case 3:
             console.log("\nNada aconteceu... 🍃\n\n");
-            pause(rl, menuJogo);
+            pause(rl, () => menuJogo(player));
             break;           
     }
 }

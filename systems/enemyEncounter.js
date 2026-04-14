@@ -45,7 +45,7 @@ function enemyEncounter(menuJogo, player, rl, saveData) {
                         break;
                         
                     case 2:
-                        useItem(turn, player, rl, pause, saveData);
+                        useItem(() => turn(player), player, rl, pause, saveData);
                         break;
 
                     case 3:

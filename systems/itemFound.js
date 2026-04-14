@@ -22,7 +22,7 @@ function itemFound(menuJogo, player, rl, pause, saveData) {
     }   
 
     saveData();
-    pause(rl, menuJogo);
+    pause(rl, () => menuJogo(player));
 
 }
 

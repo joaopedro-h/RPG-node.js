@@ -22,7 +22,7 @@ function newGame(rl, menuJogo, saveData, savePlayer) {
         /* Aonde dentro do index.js foi passado como parâmetro "newPlayer" */
         saveData();
 
-        pause(rl, menuJogo);
+        pause(rl, () => menuJogo(player));
 
     });
 }

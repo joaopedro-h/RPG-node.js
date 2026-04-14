@@ -28,7 +28,7 @@ function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
             }
 
             saveData();
-            pause(rl, menuJogo);
+            pause(rl, () => menuJogo(player));
             return;     
         }
 
@@ -46,7 +46,7 @@ function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
             console.log(`Você foi morto pelo ${enemy.name}! 💀` );
             
             saveData();
-            pause(rl, menuJogo); 
+            pause(rl, () => menuJogo(player));
             return;     
         }
 

@@ -15,7 +15,7 @@ function inventory(menuJogo, player, rl, pause) {
         /* Aonde percorre cada item do array, é necessário sempre passar o "item" (ou qualquer outro nome, foi utilizado item para fazer sentido ao código) como primeiro parâmetro e o index em segundo caso seja necessário os dois.*/
     }
 
-    pause(rl, menuJogo);
+    pause(rl, () => menuJogo(player));
 }
 
 module.exports = inventory;

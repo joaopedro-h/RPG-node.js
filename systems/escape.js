@@ -15,7 +15,7 @@ function escape(menuJogo, rl, pause, player, saveData) {
     }
 
     saveData();
-    pause(rl, menuJogo);
+    pause(rl, () => menuJogo(player));
 }
 
 module.exports = escape;  /* Exportando a função para ser utilizada no "enemyEncounter.js" */

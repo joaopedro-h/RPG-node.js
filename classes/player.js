@@ -11,14 +11,15 @@ class PlayerGame {
         this.inventory = []
     }
 
-    static fromJSON(data) {
-        const player = new PlayerGame(
+    static fromJSON(data) { /* "data" é somente um parâmetro passado nesse momento, mas dentro da função "loadGame" será substituido por "parsed". */
+
+        const player = new PlayerGame( /* Aqui é criado uma nova instância da classe, depois é preenchido com todos os atributos que estavam no "parsed". */
             data.name,
             data.hp,
             data.maxHp,
-            data.attack,
+            data.attack,                    
             data.defense
-        );
+        );                                /* Resumindo, essa função pega os dados do JSON e transforma em objeto da classe "PlayerGame", assim é possível usar o "player". */
         
         player.xp = data.xp;
         player.level = data.level;

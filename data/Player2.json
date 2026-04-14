@@ -1,18 +1,18 @@
 {
-  "name": "joao",
-  "hp": 15,
-  "maxHp": 125,
+  "name": "Player2",
+  "hp": 53,
+  "maxHp": 110,
   "attack": 18,
   "defense": 10,
-  "gold": 358,
-  "xp": 0,
+  "gold": 208,
+  "xp": 25,
   "level": 2,
   "inventory": [
     {
       "name": "Amuleto de vida ❤️ ",
       "type": "accessory",
       "value": 5,
-      "quantity": 1,
+      "quantity": 4,
       "description": "Aumenta 5 de HP máximo 🆙❤️"
     }
   ]

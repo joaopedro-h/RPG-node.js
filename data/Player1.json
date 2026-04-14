@@ -1,0 +1,11 @@
+{
+  "name": "Player1",
+  "hp": 16,
+  "maxHp": 100,
+  "attack": 15,
+  "defense": 10,
+  "gold": 64,
+  "xp": 75,
+  "level": 1,
+  "inventory": []
+}

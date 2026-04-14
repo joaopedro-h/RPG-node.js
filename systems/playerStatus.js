@@ -11,7 +11,7 @@ function playerStatus(menuJogo, player, rl, pause) {
         console.log(`⭐ XP: ${player.xp}`); 
         console.log(`🏆 Nível: ${player.level}`);
         
-        pause(rl, menuJogo);
+        pause(rl, () => menuJogo(player));
 }
 
 module.exports = playerStatus;

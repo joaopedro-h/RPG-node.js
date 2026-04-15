@@ -6,9 +6,9 @@ function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
         /*Calcula um dano aleatório entre minAttack (metade do ataque) e maxAttack (ataque total)*/
         
         console.clear();
-        console.log(`\nVocê atacou o ${enemy.name} causando ${attackPlayer} de dano! 💥\n`);
-        
+        console.log(`\nVocê atacou o ${enemy.name} causando ${attackPlayer} de dano! 💥`);
         enemy.hp -= attackPlayer;
+        console.log(`❤️  HP do inimigo após ataque: ${enemy.hp}\n`);
                     
         if (enemy.hp <= 0) {  /* Caso o inimigo chegue a 0 de vida ele é derrotado, dropando XP ao jogador. */
             console.clear();
@@ -36,9 +36,10 @@ function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
         const maxAttackEnemy = enemy.attack; 
         const attackEnemy = Math.floor(Math.random() * (maxAttackEnemy - minAttackEnemy + 1) + minAttackEnemy);
 
-        console.log(`O ${enemy.name} te atacou causando ${attackEnemy} de dano! 💥\n`);
-
+        console.log(`O ${enemy.name} te contra-atacou causando ${attackEnemy} de dano! 💥`);
         player.hp -= attackEnemy;
+        console.log(`❤️  Seu HP após ataque: ${player.hp}\n`);
+
                     
         if (player.hp <= 0) {
             console.clear();  

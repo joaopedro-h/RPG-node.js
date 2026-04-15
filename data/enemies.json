@@ -1,33 +1,33 @@
 [
-    {"name": "🧌  Goblin  🧌",
+    {"name": "Goblin",
      "hp": 20,
      "attack": 8,
      "xp": 5,
      "chance": 0.30
     },
 
-    {"name": "🧌  Ogro  🧌",
+    {"name": "Ogro",
      "hp": 50,
      "attack": 20,
      "xp": 20,
      "chance": 0.10
     },
 
-    {"name": "🐺 Lobo selvagem 🐺",
+    {"name": "Lobo selvagem",
      "hp": 25,
      "attack": 10,
      "xp": 10,
      "chance": 0.30
     },
 
-    {"name": "🐗 Javali furioso 🐗",
+    {"name": "Javali furioso",
      "hp": 30,
      "attack": 15,
      "xp": 20,
      "chance": 0.25
     },
 
-    {"name": "🐲 Dragão antigo 🐲 ",
+    {"name": "Dragão antigo",
      "hp": 250,
      "attack": 40,
      "xp": 120,

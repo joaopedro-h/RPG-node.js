@@ -1,11 +1,26 @@
 {
   "name": "Player1",
-  "hp": 36,
+  "hp": 12,
   "maxHp": 100,
-  "attack": 15,
+  "attack": 18,
   "defense": 10,
-  "gold": 81,
-  "xp": 75,
-  "level": 1,
-  "inventory": []
+  "gold": 416,
+  "xp": 40,
+  "level": 2,
+  "inventory": [
+    {
+      "name": "Amuleto de vida ❤️ ",
+      "type": "accessory",
+      "value": 5,
+      "quantity": 1,
+      "description": "Aumenta 5 de HP máximo 🆙❤️"
+    },
+    {
+      "name": "Poção de cura pequena 🧪",
+      "type": "heal",
+      "value": 20,
+      "quantity": 1,
+      "description": "Cura 20 de HP ❤️"
+    }
+  ]
 }

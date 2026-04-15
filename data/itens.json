@@ -3,14 +3,23 @@
      "type": "heal",
      "value": 20,
      "quantity": 1,
-     "description": "Cura 20 de HP ❤️"
+     "description": "Cura 20 de HP ❤️",
+     "chance": 0.80
     },
 
     {"name": "Amuleto de vida ❤️ ",
      "type": "accessory",
      "value": 5,
      "quantity": 1,
-     "description": "Aumenta 5 de HP máximo 🆙❤️"
-    }
+     "description": "Aumenta 5 de HP máximo 🆙❤️",
+     "chance": 0.05
+    },
 
+    {"name": "Poção de XP 🧪 ⭐",
+     "type": "experience",
+     "value": 50,
+     "quantity": 1,
+     "description": "Aumenta 50 de XP ⭐",
+     "chance": 0.15
+    }
 ]

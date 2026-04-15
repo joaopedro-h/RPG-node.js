@@ -3,10 +3,25 @@ const itensData = require("../data/itens.json");  /* Feito a importação dos it
 
 function itemFound(menuJogo, player, rl, pause, saveData) {
     
-    const randomItem = itensData[Math.floor(Math.random() * itensData.length)];
-    const itemFound = new Item (randomItem.name, randomItem.type, randomItem.value, randomItem.quantity, randomItem.description); /* Gerado uma nova instância da classe "Item". */
-    
-    
+    let itemFound;
+    const rand = Math.random();
+    let cumulativeChance = 0;
+
+    for (const itemData of itensData) {
+        cumulativeChance += itemData.chance;
+
+        if (rand < cumulativeChance) {
+            itemFound = new Item(
+                itemData.name,
+                itemData.type,
+                itemData.value,
+                itemData.quantity,
+                itemData.description
+            )
+            break;
+        }
+    }
+
     console.log(`\nVocê encontrou um item! 🗝️\n`);
     console.log(`${itemFound.name}.`);
     console.log(`${itemFound.description}.`);

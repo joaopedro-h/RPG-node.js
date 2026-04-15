@@ -12,12 +12,12 @@ function explore(menuJogo, player, rl, pause, saveData) {
     let event;
     const rand = Math.random(); /* Math.random gera um número entre 0 e 0.99. */
 
-    if (rand < 0.55) {
-        event = 0; // 55% inimigo
-    } else if (rand < 0.75) {
+    if (rand < 0.50) {
+        event = 0; // 50% inimigo
+    } else if (rand < 0.70) {
         event = 1; // 20% gold
     } else if (rand < 0.95) {
-        event = 2; // 20% item
+        event = 2; // 25% item
     } else {
         event = 3; // 5% nada
     }

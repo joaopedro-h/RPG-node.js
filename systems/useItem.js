@@ -48,6 +48,11 @@ function useItem(next, player, rl, pause, saveData) {
 
             console.log(`Você usou ${item.name} e aumentou ${item.value} de HP máximo ❤️`)
 
+        } else if (item.type === "experience"){
+
+            player.xp += item.value;
+
+            console.log(`Você usou ${item.name} e ganhou ${item.value} de XP ⭐`)
         }
 
         item.quantity -= 1; /* Reduz a quantidade usada pelo usuário. */

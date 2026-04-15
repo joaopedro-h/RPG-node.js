@@ -20,7 +20,7 @@ function newGame(rl, menuJogo, saveData, savePlayer) {
 
         savePlayer(player); /* Serve para enviar o jogador criado dentro do newGame para o index.js. */
         /* Aonde dentro do index.js foi passado como parâmetro "newPlayer" */
-        saveData();
+        saveData(player);
 
         pause(rl, () => menuJogo(player));
 

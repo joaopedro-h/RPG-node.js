@@ -27,7 +27,7 @@ function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
                 player.attack += 3;
             }
 
-            saveData();
+            saveData(player);
             pause(rl, () => menuJogo(player));
             return;     
         }
@@ -45,12 +45,12 @@ function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
             player.hp = 0;
             console.log(`Você foi morto pelo ${enemy.name}! 💀` );
             
-            saveData();
+            saveData(player);
             pause(rl, () => menuJogo(player));
             return;     
         }
 
-        saveData();
+        saveData(player);
         turn();
 }
 

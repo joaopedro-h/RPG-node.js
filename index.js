@@ -14,9 +14,9 @@ const inventory = require("./systems/inventory");
 const playerStatus = require("./systems/playerStatus");
 const useItem = require('./systems/useItem');
     
-const fs = require("fs");
+const fs = require("fs");   
 
-function saveData() {
+function saveData(player) {
     if (!player) return; /* Se o jogador não existir, a função não é executada, não salvando nada. */
 
     const data = JSON.stringify(player, null, 2); /* Pega o objeto "player" e transforma em string JSON, ficando armazenado na variável "data - (dados)." */
@@ -74,7 +74,7 @@ function menuJogo(player) { /* Criado o menu principal do jogo. */
         switch (opcao) {
             
             case 1: 
-                explore(menuJogo, player, rl, pause, saveData, loadGame);
+                explore(menuJogo, player, rl, pause, saveData);
                 break;
         
             case 2:
@@ -86,7 +86,7 @@ function menuJogo(player) { /* Criado o menu principal do jogo. */
                 break;
 
             case 4:
-                playerStatus(menuJogo, player, rl, pause, loadGame);
+                playerStatus(menuJogo, player, rl, pause);
                 break;
 
             case 5:

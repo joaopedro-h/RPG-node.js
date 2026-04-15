@@ -21,7 +21,7 @@ function itemFound(menuJogo, player, rl, pause, saveData) {
         player.inventory.push(itemFound); 
     }   
 
-    saveData();
+    saveData(player);
     pause(rl, () => menuJogo(player));
 
 }

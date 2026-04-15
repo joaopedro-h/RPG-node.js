@@ -56,7 +56,7 @@ function useItem(next, player, rl, pause, saveData) {
             player.inventory.splice(i, 1);
         }
 
-        saveData();
+        saveData(player);
         pause(rl, next);
 
     });

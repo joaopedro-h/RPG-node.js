@@ -4,6 +4,7 @@
      "value": 20,
      "quantity": 1,
      "description": "Cura 20 de HP ❤️",
+     "price": 250,
      "chance": 0.80
     },
 
@@ -12,6 +13,7 @@
      "value": 5,
      "quantity": 1,
      "description": "Aumenta 5 de HP máximo 🆙❤️",
+     "price": 1500,
      "chance": 0.05
     },
 
@@ -20,6 +22,7 @@
      "value": 50,
      "quantity": 1,
      "description": "Aumenta 50 de XP ⭐",
+     "price": 500,
      "chance": 0.15
     }
 ]

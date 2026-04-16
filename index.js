@@ -15,6 +15,7 @@ const playerStatus = require("./systems/playerStatus");
 const useItem = require('./systems/useItem');
     
 const fs = require("fs");   
+const store = require('./systems/store');
 
 function saveData(player) {
     if (!player) return; /* Se o jogador não existir, a função não é executada, não salvando nada. */
@@ -65,7 +66,8 @@ function menuJogo(player) { /* Criado o menu principal do jogo. */
   console.log("2. Inventário 🎒");
   console.log("3. Usar item ⚙️");
   console.log("4. Status do personagem 👤");
-  console.log("5. Sair ❌\n");
+  console.log("5. Loja 🏪");
+  console.log("6. Sair ❌\n");
 
     rl.question(`Escolha uma opção: `, (opcao) => {
         
@@ -74,11 +76,11 @@ function menuJogo(player) { /* Criado o menu principal do jogo. */
         switch (opcao) {
             
             case 1: 
-                explore(menuJogo, player, rl, pause, saveData);
+                explore(() => menuJogo(player), player, rl, pause, saveData);
                 break;
         
             case 2:
-                inventory(menuJogo, player, rl, pause);
+                inventory(() => menuJogo(player), player, rl, pause);
                 break;
 
             case 3:
@@ -86,10 +88,14 @@ function menuJogo(player) { /* Criado o menu principal do jogo. */
                 break;
 
             case 4:
-                playerStatus(menuJogo, player, rl, pause);
+                playerStatus(() => menuJogo(player), player, rl, pause);
                 break;
 
             case 5:
+                store(() => menuJogo(player), player, rl, pause, saveData);
+                break;
+
+            case 6:
                 menuInicial(player);
                 break;
             

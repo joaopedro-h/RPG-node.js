@@ -1,3 +1,5 @@
+const playerDeath = require("./playerDeath");
+
 function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
 
         const minAttackPlayer = Math.floor(player.attack / 2); /* Define o ataque mínimo, aonde é pega o ataque máximo e divide por 2. */
@@ -41,13 +43,8 @@ function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
         console.log(`❤️  Seu HP após ataque: ${player.hp}\n`);
 
                     
-        if (player.hp <= 0) {
-            console.clear();  
-            player.hp = 0;
-            console.log(`Você foi morto pelo ${enemy.name}! 💀` );
-            
-            saveData(player);
-            pause(rl, () => menuJogo(player));
+        if (player.hp <= 0) { /* Se o jogador estiver com 0 ou menos de vida, é chamado a função de jogador morto. */
+            playerDeath(() => menuJogo(player), player, rl, pause, saveData);
             return;     
         }
 

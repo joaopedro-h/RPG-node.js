@@ -26,7 +26,7 @@ function itemFound(menuJogo, player, rl, pause, saveData) {
     console.log(`${itemFound.name}.`);
     console.log(`${itemFound.description}.`);
 
-    const existingItem = player.inventory.find(item => item.name === itemFound.name); /* "find" retorna o item encontrado para variável, ou seja, existingItem virá o própio item encontrado. */
+    const existingItem = player.inventory.find(itemPlayer => itemPlayer.name === itemFound.name); /* "find" retorna o item encontrado para variável, ou seja, existingItem virá o própio item encontrado. */
 
     if (existingItem) {  /* Se o item já existir é adicionado apenas uma quantidade a mais no inventário. */
         existingItem.quantity += 1;

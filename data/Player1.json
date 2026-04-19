@@ -1,11 +1,11 @@
 {
   "name": "Player1",
-  "hp": 30,
+  "hp": 47,
   "maxHp": 100,
   "attack": 18,
   "defense": 10,
-  "gold": 202,
-  "xp": 0,
+  "gold": 8,
+  "xp": 45,
   "level": 2,
   "inventory": []
 }

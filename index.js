@@ -13,9 +13,9 @@ const explore = require("./systems/explore");
 const inventory = require("./systems/inventory");
 const playerStatus = require("./systems/playerStatus");
 const useItem = require('./systems/useItem');
+const store = require('./systems/store');
     
 const fs = require("fs");   
-const store = require('./systems/store');
 
 function saveData(player) {
     if (!player) return; /* Se o jogador não existir, a função não é executada, não salvando nada. */

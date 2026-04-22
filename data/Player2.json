@@ -1,19 +1,20 @@
 {
   "name": "Player2",
-  "hp": 56,
-  "maxHp": 110,
+  "hp": 89,
+  "maxHp": 115,
   "attack": 24,
   "defense": 10,
-  "gold": 71,
-  "xp": 15,
+  "gold": 750,
+  "xp": 25,
   "level": 4,
   "inventory": [
     {
-      "name": "Amuleto de vida ❤️ ",
-      "type": "accessory",
-      "value": 5,
-      "quantity": 12,
-      "description": "Aumenta 5 de HP máximo 🆙❤️"
+      "name": "Poção de XP 🧪 ⭐",
+      "type": "experience",
+      "value": 50,
+      "quantity": 1,
+      "description": "Aumenta 50 de XP ⭐",
+      "price": 500
     }
   ]
 }

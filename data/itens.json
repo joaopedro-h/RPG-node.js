@@ -4,8 +4,8 @@
      "value": 20,
      "quantity": 1,
      "description": "Cura 20 de HP ❤️",
-     "price": 250,
-     "chance": 0.80
+     "price": 200,
+     "chance": 0.70
     },
 
     {"name": "Amuleto de vida ❤️ ",
@@ -22,7 +22,18 @@
      "value": 50,
      "quantity": 1,
      "description": "Aumenta 50 de XP ⭐",
-     "price": 500,
+     "price": 300,
      "chance": 0.15
+    },
+
+    {"name": "Espada de ferro 🗡️ ",
+     "type": "weapon",
+     "value": 25,
+     "quantity": 1,
+     "description": "Aumenta 25 de dano no ataque 💥",
+     "price": 450,
+     "chance": 0.10,
+     "equiped": false
     }
+
 ]

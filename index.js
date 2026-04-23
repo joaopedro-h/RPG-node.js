@@ -13,6 +13,7 @@ const explore = require("./systems/explore");
 const inventory = require("./systems/inventory");
 const playerStatus = require("./systems/playerStatus");
 const useItem = require('./systems/useItem');
+const equipItem = require("./systems/equipItem");
 const store = require('./systems/store');
     
 const fs = require("fs");   
@@ -65,9 +66,10 @@ function menuJogo(player) { /* Criado o menu principal do jogo. */
   console.log("1. Explorar ⚔️");
   console.log("2. Inventário 🎒");
   console.log("3. Usar item ⚙️");
-  console.log("4. Status do personagem 👤");
-  console.log("5. Loja 🏪");
-  console.log("6. Sair ❌\n");
+  console.log("4. Equipar item ⚙️");
+  console.log("5. Status do personagem 👤");
+  console.log("6. Loja 🏪");
+  console.log("0. Sair ❌\n");
 
     rl.question(`Escolha uma opção: `, (opcao) => {
         
@@ -88,14 +90,18 @@ function menuJogo(player) { /* Criado o menu principal do jogo. */
                 break;
 
             case 4:
-                playerStatus(() => menuJogo(player), player, rl, pause);
+                equipItem(() => menuJogo(player), player, rl, pause, saveData);
                 break;
 
             case 5:
-                store(() => menuJogo(player), player, rl, pause, saveData);
+                playerStatus(() => menuJogo(player), player, rl, pause);
                 break;
 
             case 6:
+                store(() => menuJogo(player), player, rl, pause, saveData);
+                break;
+
+            case 0:
                 menuInicial(player);
                 break;
             

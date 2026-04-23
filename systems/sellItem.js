@@ -15,13 +15,22 @@ function sellItem(menuJogo, player, rl, pause, saveData) {
     
     player.inventory.forEach((item, index ) => {
         const sellPrice = Math.floor(item.price * 0.7);   
-        console.log(`${index + 1}. ${item.name} (x${item.quantity}): ${sellPrice} 💰`);
+        console.log(`${index + 1}. ${item.name} (x${item.quantity})`);
+        console.log(`x${sellPrice} 💰\n`);
     });
+
+    console.log("\n0. Sair ❌");
 
     rl.question(`\nQual item deseja vender? `, (sellItem) => {
 
         const i = Number(sellItem) - 1;
         const itemPlayer = player.inventory[i];
+
+        if (sellItem === "0") {  /* Se o usuário digitar "0" ele retorna para o menu. */
+            console.log("Saindo... 🏃🏻‍♂️‍➡️");
+            pause(rl, () => menuJogo(player));
+            return;
+        }
 
         if (!itemPlayer) {
             console.log("Item não encontrado! ❌");

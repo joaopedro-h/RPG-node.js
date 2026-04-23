@@ -12,7 +12,9 @@ function useItem(next, player, rl, pause, saveData) {
     }else{
         
         player.inventory.forEach((item, index) => {  /* Inventário do jogador será exibido pelo "forEach".*/
-            console.log(`${index + 1}. ${item.name} (x${item.quantity})`);
+            if ((item.type === "heal" || item.type === "accessory" || item.type === "experience")) {
+                console.log(`${index + 1}. ${item.name} (x${item.quantity})`);
+            }
         });
 
         /* Aonde percorre cada item do array, é necessário sempre passar o "item" (ou qualquer outro nome, foi utilizado item para fazer sentido ao código) como primeiro parâmetro e o index em segundo caso seja necessário os dois.*/
@@ -53,6 +55,16 @@ function useItem(next, player, rl, pause, saveData) {
             player.xp += item.value;
 
             console.log(`Você usou ${item.name} e ganhou ${item.value} de XP ⭐`)
+
+        }else if (item.type === "weapon") {
+
+            item.equiped = true;
+            
+            console.log(`Você equipou a ${item.name} e ganhou ${item.value} de ataque 💥`)
+
+            saveData(player);
+            pause(rl, next);
+            return;
         }
 
         item.quantity -= 1; /* Reduz a quantidade usada pelo usuário. */

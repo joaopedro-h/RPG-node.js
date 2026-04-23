@@ -11,13 +11,22 @@ function buyItem(menuJogo, player, rl, pause, saveData) {
     console.log("Itens disponíveis: \n");
         
     itensData.forEach((item, index)=> {
-        console.log(`${index + 1}. ${item.name}: ${item.price} 💰`);
+        console.log(`${index + 1}. ${item.name}`);
+        console.log(`x${item.price} 💰\n`);
     });
-        
+    
+    console.log("\n0. Sair ❌");
+
     rl.question(`\nQual item deseja comprar? `, (buyItem) =>{
     
         const i = Number(buyItem) - 1; /* Pega o número que o usuário digitou e transforma no índice correto do array. */
         const itemStore = itensData[i];
+
+        if (buyItem === "0") { /* Se o usuário digitar "0" ele retorna para o menu. */
+            console.log("Saindo... 🏃🏻‍♂️‍➡️");
+            pause(rl, () => menuJogo(player));
+            return;
+        }
     
         if (!itemStore) { /* Se o jogador escolher um item que não existe a venda é retornado para o menu. */
             console.log("Item inválido! ❌");
@@ -33,7 +42,8 @@ function buyItem(menuJogo, player, rl, pause, saveData) {
                 itemStore.value,
                 itemStore.quantity,
                 itemStore.description,
-                itemStore.price
+                itemStore.price,
+                itemStore.equiped
             )
     
             const existingItem = player.inventory.find(itemPlayer => itemPlayer.name === itemStore.name); /* Verifica se o jogador já tem alguma quantidade do item comprado no inventário.*/

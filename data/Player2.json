@@ -1,20 +1,37 @@
 {
   "name": "Player2",
-  "hp": 89,
-  "maxHp": 115,
-  "attack": 24,
+  "hp": 120,
+  "maxHp": 120,
+  "attack": 18,
   "defense": 10,
-  "gold": 750,
-  "xp": 25,
-  "level": 4,
+  "gold": 1395,
+  "xp": 175,
+  "level": 6,
   "inventory": [
+    {
+      "name": "Poção de cura pequena 🧪",
+      "type": "heal",
+      "value": 20,
+      "quantity": 2,
+      "description": "Cura 20 de HP ❤️",
+      "price": 200
+    },
+    {
+      "name": "Espada de ferro 🗡️ ",
+      "type": "weapon",
+      "value": 25,
+      "quantity": 1,
+      "description": "Aumenta 25 de dano no ataque 💥",
+      "price": 450,
+      "equiped": true
+    },
     {
       "name": "Poção de XP 🧪 ⭐",
       "type": "experience",
       "value": 50,
       "quantity": 1,
       "description": "Aumenta 50 de XP ⭐",
-      "price": 500
+      "price": 300
     }
   ]
 }

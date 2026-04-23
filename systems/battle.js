@@ -4,7 +4,7 @@ function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
 
         const minAttackPlayer = Math.floor(player.attack / 2); /* Define o ataque mínimo, aonde é pega o ataque máximo e divide por 2. */
         const maxAttackPlayer = player.attack; /* Ataque máximo do jogador. */
-        const attackPlayer = Math.floor(Math.random() * (maxAttackPlayer - minAttackPlayer + 1) + minAttackPlayer);
+        let attackPlayer = Math.floor(Math.random() * (maxAttackPlayer - minAttackPlayer + 1) + minAttackPlayer);
         /*Calcula um dano aleatório entre minAttack (metade do ataque) e maxAttack (ataque total)*/
         
         console.clear();

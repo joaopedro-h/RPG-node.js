@@ -26,7 +26,7 @@ function enemyEncounter(menuJogo, player, rl, saveData) {
         }
     }
 
-    console.log(`⚔️  Você encontrou um... ❗❗\n`);
+    console.log(`⚔️  Você encontrou um inimigo... 😱❗\n`);
             
         console.log(`${enemy.name}\n`);
         

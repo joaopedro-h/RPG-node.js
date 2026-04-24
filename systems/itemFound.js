@@ -18,7 +18,7 @@ function itemFound(menuJogo, player, rl, pause, saveData) {
                 itemData.quantity,
                 itemData.description,
                 itemData.price,
-                itemData.equiped
+                itemData.equipped
             )
             break;
         }

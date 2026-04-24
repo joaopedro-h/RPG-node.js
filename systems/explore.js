@@ -6,7 +6,7 @@ function explore(menuJogo, player, rl, pause, saveData) {
     
     console.clear();
     console.log("=============================");
-    console.log("🌲 FLORESTA DE BROKILON 🌲")
+    console.log(" 🌲 FLORESTA DE BROKILON 🌲 ")
     console.log("=============================\n");
     
     let event;
@@ -37,7 +37,7 @@ function explore(menuJogo, player, rl, pause, saveData) {
             break;
 
         case 3:
-            console.log("\nNada aconteceu... 🍃\n\n");
+            console.log("\nNada aconteceu... 🍃\n");
             pause(rl, () => menuJogo(player));
             break;           
     }

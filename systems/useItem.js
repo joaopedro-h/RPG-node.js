@@ -56,17 +56,8 @@ function useItem(next, player, rl, pause, saveData) {
 
             console.log(`Você usou ${item.name} e ganhou ${item.value} de XP ⭐`)
 
-        }else if (item.type === "weapon") {
-
-            item.equiped = true;
-            
-            console.log(`Você equipou a ${item.name} e ganhou ${item.value} de ataque 💥`)
-
-            saveData(player);
-            pause(rl, next);
-            return;
         }
-
+        
         item.quantity -= 1; /* Reduz a quantidade usada pelo usuário. */
 
         if (item.quantity <= 0) { /* Se a quantidade chegar a 0 o item é removido do inventário. */

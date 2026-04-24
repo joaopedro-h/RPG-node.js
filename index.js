@@ -5,7 +5,6 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-
 const pause = require("./systems/pause");
 const newGame = require("./systems/newGame");
 const loadGame = require("./systems//loadGame");

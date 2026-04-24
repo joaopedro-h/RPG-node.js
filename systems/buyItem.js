@@ -43,7 +43,7 @@ function buyItem(menuJogo, player, rl, pause, saveData) {
                 itemStore.quantity,
                 itemStore.description,
                 itemStore.price,
-                itemStore.equiped
+                itemStore.equipped
             )
     
             const existingItem = player.inventory.find(itemPlayer => itemPlayer.name === itemStore.name); /* Verifica se o jogador já tem alguma quantidade do item comprado no inventário.*/
@@ -57,7 +57,7 @@ function buyItem(menuJogo, player, rl, pause, saveData) {
     
             player.gold -= itemStore.price; /* Desconta a quantidade de ouro do jogador. */
             console.log(`Você comprou ${itemStore.name} por ${itemStore.price} moedas de ouro! ✅`);
-            console.log(`Seu ouro: ${player.gold}`);
+            console.log(`Seu ouro: ${player.gold} 💰`);
     
         }else{
             console.log("Ouro insuficiente! 💰");

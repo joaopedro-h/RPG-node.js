@@ -1,6 +1,6 @@
 const playerDeath = require("./playerDeath");
 const getPlayerAttack = require("../utils/getPlayerAttack");
-const getPlayerDefense = require("../utils//getPlayerDefense");
+const getPlayerDefense = require("../utils/getPlayerDefense");
 
 function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
 
@@ -9,18 +9,18 @@ function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
         const attackPlayer = Math.floor(Math.random() * (maxAttackPlayer - minAttackPlayer + 1) + minAttackPlayer);
         /*Calcula um dano aleatório entre minAttack (metade do ataque) e maxAttack (ataque total)*/
         
-        const finalAttack = getPlayerAttack(player, attackPlayer);
+        const finalAttackPlayer = getPlayerAttack(player, attackPlayer);
 
         console.clear();
-        console.log(`\nVocê atacou o ${enemy.name} causando ${finalAttack} de dano! 💥`);
-        enemy.hp -= finalAttack;
+        console.log(`\n\x1b[31m Você atacou o ${enemy.name} causando ${finalAttackPlayer} de dano! \x1b[0m 💥`);
+        enemy.hp -= finalAttackPlayer;
         
-        console.log(`❤️  HP do inimigo após ataque: ${enemy.hp}\n`);
+        console.log(`❤️ \x1b[32m  HP do inimigo após ataque: ${enemy.hp} \x1b[0m \n`);
                     
         if (enemy.hp <= 0) {  /* Caso o inimigo chegue a 0 de vida ele é derrotado, dropando XP ao jogador. */
 
-            console.log(`Você derrotou o ${enemy.name}! 🏆` );
-            console.log(`XP obtido na luta: ${enemy.xp} ⭐`);
+            console.log(`\x1b[36m Você derrotou o ${enemy.name}! \x1b[0m 🏆` );
+            console.log(`\x1b[36m XP obtido na luta: ${enemy.xp} \x1b[0m ⭐`);
             player.xp += enemy.xp;
 
             
@@ -42,9 +42,11 @@ function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
         const maxAttackEnemy = enemy.attack; 
         const attackEnemy = Math.floor(Math.random() * (maxAttackEnemy - minAttackEnemy + 1) + minAttackEnemy);
 
-        console.log(`O ${enemy.name} te contra-atacou causando ${attackEnemy} de dano! 💥`);
-        player.hp -= attackEnemy;
-        console.log(`❤️  Seu HP após ataque: ${player.hp}\n`);
+        const finalAttackEnemy = getPlayerDefense(player, attackEnemy);
+
+        console.log(`\x1b[31m O ${enemy.name} te contra-atacou causando ${finalAttackEnemy} de dano! \x1b[0m💥`);
+        player.hp -= finalAttackEnemy;
+        console.log(`❤️ \x1b[32m  Seu HP após ataque: ${player.hp} \x1b[0m \n`);
 
                     
         if (player.hp <= 0) { /* Se o jogador estiver com 0 ou menos de vida, é chamado a função de jogador morto. */

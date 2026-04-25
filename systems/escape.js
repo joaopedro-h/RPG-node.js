@@ -8,10 +8,10 @@ function escape(menuJogo, rl, pause, player, saveData) {
 
     if (player.gold <= 0) {
         player.gold = 0;
-        console.log("Você perdeu todas as moedas restantes de ouro nessa fuga!");
+        console.log("\x1b[33m Você perdeu todas as moedas restantes de ouro nessa fuga! \x1b[0 ");
         
     }else{
-        console.log(`Ops.. deixou cair ${goldLost} moedas de ouro na fuga. 💰`);
+        console.log(`\x1b[33m Ops.. deixou cair ${goldLost} moedas de ouro na fuga. \x1b[0 💰`);
     }
 
     saveData(player);

@@ -42,9 +42,10 @@ function sellItem(menuJogo, player, rl, pause, saveData) {
             const sellPrice = Math.floor(itemPlayer.price * 0.7); 
             player.gold += sellPrice;
             itemPlayer.quantity -= 1;
-
+            
+            console.clear();
             console.log(`Você vendeu ${itemPlayer.name} por ${sellPrice} moedas de ouro 💰`);
-            console.log(`Seu ouro: ${player.gold} 💰`);
+            console.log(`\x1b[33m Seu ouro: ${player.gold} \x1b[0m💰`);
 
             if (itemPlayer.quantity === 0) {
                 player.inventory.splice(i, 1);

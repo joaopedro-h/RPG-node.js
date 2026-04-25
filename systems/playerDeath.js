@@ -10,7 +10,7 @@ function playerDeath(menuJogo, player, rl, pause, saveData) {
         return;
     }   
     
-    console.log("VOCÊ MORREU 💀\n");
+    console.log("\x1b[31m VOCÊ MORREU \x1b[0 💀\n");
 
     if (player.inventory.length > 0) {
         
@@ -30,9 +30,9 @@ function playerDeath(menuJogo, player, rl, pause, saveData) {
 
     console.log("======================================\n");
     console.log("RETORNANDO PARA O ACAMPAMENTO.. 🏕️\n");
-    console.log(`❤️  HP: ${player.hp}`);
-    console.log(`💰 Ouro: ${player.gold}`);  
-    console.log(`⭐ XP: ${player.xp}\n`);       
+    console.log(`❤️\x1b[32m  HP: ${player.hp}\x1b[31m `);
+    console.log(`💰\x1b[33m Ouro: ${player.gold}\x1b[31m `);  
+    console.log(`⭐\x1b[35m XP: ${player.xp}\x1b[31m \n`);       
     console.log("======================================"); 
 
 

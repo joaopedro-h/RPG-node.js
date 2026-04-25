@@ -56,11 +56,12 @@ function buyItem(menuJogo, player, rl, pause, saveData) {
             }
     
             player.gold -= itemStore.price; /* Desconta a quantidade de ouro do jogador. */
+            console.clear();
             console.log(`Você comprou ${itemStore.name} por ${itemStore.price} moedas de ouro! ✅`);
-            console.log(`Seu ouro: ${player.gold} 💰`);
+            console.log(`\x1b[33m Seu ouro: ${player.gold} \x1b[0m💰`);
     
         }else{
-            console.log("Ouro insuficiente! 💰");
+            console.log("\x1b[33m Ouro insuficiente! \x1b[0m💰");
         }
     
         saveData(player);

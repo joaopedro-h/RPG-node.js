@@ -42,19 +42,19 @@ function useItem(next, player, rl, pause, saveData) {
                 player.hp = player.maxHp
             }
 
-            console.log(`Você usou ${item.name} e recuperou ${item.value} de HP ❤️`)
+            console.log(`\x1b[32m Você usou ${item.name} e recuperou ${item.value} de HP \x1b[0m ❤️`)
 
         } else if (item.type === "accessory"){
 
             player.maxHp += item.value;
 
-            console.log(`Você usou ${item.name} e aumentou ${item.value} de HP máximo ❤️`)
+            console.log(`\x1b[32m Você usou ${item.name} e aumentou ${item.value} de HP máximo \x1b[0m ❤️`)
 
         } else if (item.type === "experience"){
 
             player.xp += item.value;
 
-            console.log(`Você usou ${item.name} e ganhou ${item.value} de XP ⭐`)
+            console.log(`\x1b[35m Você usou ${item.name} e ganhou ${item.value} de XP \x1b[0m⭐`)
 
         }
         

@@ -29,7 +29,7 @@ function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador esco
 
     console.clear();
     console.log("\x1b[90m=================\x1b[0m");
-    console.log("\x1b[91m⚔️  RPG ELDRIN\x1b[0m")
+    console.log("\x1b[91m⚔️  RPG ELDRIN ⚔️\x1b[0m")
     console.log("\x1b[90m=================\n\x1b[0m");
 
     console.log("1 - Novo jogo. 💡");
@@ -61,7 +61,12 @@ function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador esco
 
 function menuJogo(player) { /* Criado o menu principal do jogo. */
   
-  console.clear();  
+  console.clear();
+
+  console.log("\x1b[90m=====================\x1b[0m");
+  console.log("\x1b[91m⚔️  MENU PRINCIPAL ⚔️\x1b[0m")
+  console.log("\x1b[90m=====================\n\x1b[0m");
+
   console.log("1. Explorar ⚔️");
   console.log("2. Inventário 🎒");
   console.log("3. Usar item ⚙️");

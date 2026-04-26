@@ -43,60 +43,70 @@ O projeto foi desenvolvido com foco em prática de lógica, organização de có
 ## 🎮 Menu do Jogo
 
 ### Menu Inicial
+```
+==================
+⚔️ RPG ELDRIN ⚔️
+==================
 
 1 - Novo jogo 💡
 2 - Carregar jogo ⏳
 3 - Sair ❌
+```
 
 ### Menu Principal
+```
+=====================
+⚔️ MENU PRINCIPAL ⚔️
+=====================
 
-Explorar 🗺️
-Inventário 🎒
-Usar item ⚙️
-Equipar item 🛡️
-Status do personagem 🧙
-Loja 🏪
-Sair ❌
+1. Explorar 🗺️
+2. Inventário 🎒
+3. Usar item ⚙️
+4. Equipar item 🛡️
+5. Status do personagem 🧙
+6. Loja 🏪
+0. Sair ❌
+```
 
-## 📁 Estrutura do Projeto
-
+```
 project/
 ├── classes/
-│ ├── enemy.js
-│ ├── item.js
-│ └── player.js
+│   ├── enemy.js
+│   ├── item.js
+│   └── player.js
 │
 ├── data/
-│ ├── enemies.json
-│ ├── itens.json
-│ ├── Player1.json
-│ └── Player2.json
+│   ├── enemies.json
+│   ├── itens.json
+│   ├── Player1.json
+│   └── Player2.json
 │
 ├── systems/
-│ ├── battle.js
-│ ├── buyItem.js
-│ ├── enemyEncounter.js
-│ ├── equipItem.js
-│ ├── escape.js
-│ ├── explore.js
-│ ├── gold.js
-│ ├── inventory.js
-│ ├── itemFound.js
-│ ├── loadGame.js
-│ ├── newGame.js
-│ ├── pause.js
-│ ├── playerDeath.js
-│ ├── playerStatus.js
-│ ├── sellItem.js
-│ ├── store.js
-│ └── useItem.js
+│   ├── battle.js
+│   ├── buyItem.js
+│   ├── enemyEncounter.js
+│   ├── equipItem.js
+│   ├── escape.js
+│   ├── explore.js
+│   ├── gold.js
+│   ├── inventory.js
+│   ├── itemFound.js
+│   ├── loadGame.js
+│   ├── newGame.js
+│   ├── pause.js
+│   ├── playerDeath.js
+│   ├── playerStatus.js
+│   ├── sellItem.js
+│   ├── store.js
+│   └── useItem.js
 │
 ├── utils/
-│ ├── getEnemyDisplayName.js
-│ ├── getPlayerAttack.js
-│ └── getPlayerDefense.js
+│   ├── getEnemyDisplayName.js
+│   ├── getPlayerAttack.js
+│   └── getPlayerDefense.js
 │
 └── index.js
+```
 
 ---
 

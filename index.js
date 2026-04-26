@@ -29,7 +29,7 @@ function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador esco
 
     console.clear();
     console.log("\x1b[90m=================\x1b[0m");
-    console.log("\x1b[91m⚔️  RPG SOMBRIO\x1b[0m")
+    console.log("\x1b[91m⚔️  RPG ELDRIN\x1b[0m")
     console.log("\x1b[90m=================\n\x1b[0m");
 
     console.log("1 - Novo jogo. 💡");

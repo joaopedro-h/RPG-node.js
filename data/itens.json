@@ -5,7 +5,16 @@
      "quantity": 1,
      "description": "Cura 20 de HP ❤️",
      "price": 200,
-     "chance": 0.65
+     "chance": 0.45
+    },
+
+    {"name": "Poção de cura grande 🧪",
+     "type": "heal",
+     "value": 40,
+     "quantity": 1,
+     "description": "Cura 40 de HP ❤️",
+     "price": 400,
+     "chance": 0.20
     },
 
     {"name": "Amuleto de vida ❤️ ",

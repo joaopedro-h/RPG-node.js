@@ -5,9 +5,9 @@ const itemFound = require("./itemFound");
 function explore(menuJogo, player, rl, pause, saveData) {
     
     console.clear();
-    console.log("=============================");
-    console.log(" 🌲 FLORESTA DE BROKILON 🌲 ")
-    console.log("=============================\n");
+    console.log("\x1b[38;2;0;100;0m=============================\x1b[0m");
+    console.log("\x1b[38;2;139;69;19m 🌲 FLORESTA DE BROKILON 🌲 \x1b[0m")
+    console.log("\x1b[38;2;0;100;0m=============================\x1b[0m\n");
     
     let event;
     const rand = Math.random(); /* Math.random gera um número entre 0 e 0.99. */

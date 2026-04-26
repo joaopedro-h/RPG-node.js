@@ -28,9 +28,9 @@ function saveData(player) {
 function menuInicial() {  /* Criado o menu inicial do jogo, aonde o jogador escolhe se deseja iniciar um novo jogo ou carregar um jogo já criado. */
 
     console.clear();
-    console.log("\x1b[36m=================\x1b[0m");
-    console.log("\x1b[95m⚔️  RPG TERMINAL\x1b[0m")
-    console.log("\x1b[36m=================\n\x1b[0m");
+    console.log("\x1b[90m=================\x1b[0m");
+    console.log("\x1b[91m⚔️  RPG SOMBRIO\x1b[0m")
+    console.log("\x1b[90m=================\n\x1b[0m");
 
     console.log("1 - Novo jogo. 💡");
     console.log("2 - Carregar jogo. ⏳");

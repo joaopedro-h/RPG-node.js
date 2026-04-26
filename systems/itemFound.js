@@ -24,9 +24,9 @@ function itemFound(menuJogo, player, rl, pause, saveData) {
         }
     }
 
-    console.log(`\nVocê encontrou um item! 🗝️\n`);
-    console.log(`${itemFound.name}.`);
-    console.log(`${itemFound.description}.`);
+    console.log(`\x1b[38;5;214mVocê encontrou um item! 🗝️\x1b[0m\n`);
+    console.log(`${itemFound.name}`);
+    console.log(`${itemFound.description}`);
 
     const existingItem = player.inventory.find(itemPlayer => itemPlayer.name === itemFound.name); /* "find" retorna o item encontrado para variável, ou seja, existingItem virá o própio item encontrado. */
 

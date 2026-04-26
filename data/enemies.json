@@ -1,35 +1,40 @@
 [
     {"name": "Goblin",
+     "type": "goblin",
      "hp": 20,
-     "attack": 8,
+     "attack": 18,
      "xp": 5,
      "chance": 0.30
     },
 
     {"name": "Ogro",
+     "type": "ogro",
      "hp": 50,
-     "attack": 20,
+     "attack": 30,
      "xp": 20,
      "chance": 0.10
     },
 
     {"name": "Lobo selvagem",
+     "type": "lobo",
      "hp": 25,
-     "attack": 10,
+     "attack": 25,
      "xp": 10,
      "chance": 0.30
     },
 
     {"name": "Javali furioso",
+     "type": "javali",
      "hp": 30,
-     "attack": 15,
+     "attack": 20,
      "xp": 20,
      "chance": 0.25
     },
 
     {"name": "Dragão antigo",
+     "type": "dragao",
      "hp": 250,
-     "attack": 40,
+     "attack": 60,
      "xp": 120,
      "chance": 0.05
     }

@@ -3,7 +3,7 @@ function gold(menuJogo, player, rl, pause, saveData) {
     let goldFound = Math.floor(Math.random() * 100) + 1;  /* Gera um número aleatório entre 1 e 100, que vai ser a quantidade de ouro encontrada. */
     player.gold += goldFound;  /* Adiciona a quantidade de ouro encontrada para o usuário. */
 
-    console.log(`\n\x1b[33mVocê achou ${goldFound} moedas de ouro! 💰\x1b[0\n`);
+    console.log(`\x1b[33mVocê achou ${goldFound} moedas de ouro! 💰\x1b[0`);
 
     saveData(player);
     pause(rl, () => menuJogo(player));

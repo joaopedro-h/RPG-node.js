@@ -34,7 +34,7 @@ function useItem(next, player, rl, pause, saveData) {
             return;
         }
         
-        if (item.type === "heal") {
+        if (item.type === "heal" && item.value === 20) {
 
             player.hp += item.value;
 
@@ -42,19 +42,29 @@ function useItem(next, player, rl, pause, saveData) {
                 player.hp = player.maxHp
             }
 
-            console.log(`\x1b[32m Você usou ${item.name} e recuperou ${item.value} de HP \x1b[0m ❤️`)
+            console.log(`\x1b[32mVocê usou ${item.name} e recuperou ${item.value} de HP \x1b[0m ❤️`)
+
+        } else if (item.type === "heal" && item.value === 40) {
+
+            player.hp += item.value;
+
+            if (player.hp > player.maxHp) {
+                player.hp = player.maxHp
+            }
+
+            console.log(`\x1b[32mVocê usou ${item.name} e recuperou ${item.value} de HP \x1b[0m ❤️`)
 
         } else if (item.type === "accessory"){
 
             player.maxHp += item.value;
 
-            console.log(`\x1b[32m Você usou ${item.name} e aumentou ${item.value} de HP máximo \x1b[0m ❤️`)
+            console.log(`\x1b[32mVocê usou ${item.name} e aumentou ${item.value} de HP máximo \x1b[0m ❤️`)
 
         } else if (item.type === "experience"){
 
             player.xp += item.value;
 
-            console.log(`\x1b[35m Você usou ${item.name} e ganhou ${item.value} de XP \x1b[0m⭐`)
+            console.log(`\x1b[35mVocê usou ${item.name} e ganhou ${item.value} de XP \x1b[0m⭐`)
 
         }
         

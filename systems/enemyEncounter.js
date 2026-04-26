@@ -2,8 +2,9 @@ const Enemy = require("../classes/enemy");
 const enemiesData = require("../data/enemies.json")  /* Feito a importação dos inimigos criados para a exploração, a partir do "enemies.json" */
 const battle = require("./battle");  /* Importando a função "battle.js" (e as demais abaixo) para ser utilizada na função "enemyEncounter.js" */
 const useItem = require("./useItem");
-const escape = require("./escape");  
-const pause = require("./pause");  
+const escape = require("./escape"); 
+const getEnemyDisplayName = require ("../utils/getEnemyDisplayName");
+const pause = require("./pause"); 
 
 
 function enemyEncounter(menuJogo, player, rl, saveData) {
@@ -18,6 +19,7 @@ function enemyEncounter(menuJogo, player, rl, saveData) {
         if (rand < cumulativeChance) {
             enemy = new Enemy (
                 enemyData.name,
+                enemyData.type,
                 enemyData.hp,
                 enemyData.attack,
                 enemyData.xp
@@ -26,9 +28,9 @@ function enemyEncounter(menuJogo, player, rl, saveData) {
         }
     }
 
-    console.log(`⚔️  Você encontrou um inimigo... 😱❗\n`);
+    console.log(`⚔️  Você encontrou um inimigo... 💀❗\n`);
             
-        console.log(`${enemy.name}\n`);
+        console.log(`${getEnemyDisplayName(enemy)}\n`);
         
         turn();
         function turn() {
@@ -56,7 +58,7 @@ function enemyEncounter(menuJogo, player, rl, saveData) {
 
                     default:
                         console.clear();
-                        console.log("Opcão inválida...");
+                        console.log("\x1b[91mOpcão inválida...\x1b[0m\n");
                         turn();
                         break;
                 }

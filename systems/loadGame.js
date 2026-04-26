@@ -11,7 +11,7 @@ function loadGame(menuJogo, menuInicial, rl, pause) {
         const path = `./data/${savedName}.json`; /* "path" recebe o caminho do arquivo JSON que o usuário escolher. */
 
         if (!fs.existsSync(path)) {
-            console.log("Nenhum save encontrado! ❌");
+            console.log("\x1b[91m Nenhum save encontrado! \x1b[0m❌");
             pause(rl, menuInicial);
             return;
         }

@@ -6,7 +6,7 @@ function buyItem(menuJogo, player, rl, pause, saveData) {
     console.clear();
     console.log("====================");
     console.log("COMERCIANTE 🧝🏽");
-    console.log(`Seu ouro: ${player.gold} 💰`);
+    console.log(`\x1b[33mSeu ouro: ${player.gold} 💰\x1b[0m`);
     console.log("====================\n");
     console.log("Itens disponíveis: \n");
         
@@ -29,7 +29,7 @@ function buyItem(menuJogo, player, rl, pause, saveData) {
         }
     
         if (!itemStore) { /* Se o jogador escolher um item que não existe a venda é retornado para o menu. */
-            console.log("Item inválido! ❌");
+            console.log("\x1b[91mItem não encontrado! ❌\x1b[0m");
             pause(rl, () => menuJogo(player));
             return
         }
@@ -58,10 +58,10 @@ function buyItem(menuJogo, player, rl, pause, saveData) {
             player.gold -= itemStore.price; /* Desconta a quantidade de ouro do jogador. */
             console.clear();
             console.log(`Você comprou ${itemStore.name} por ${itemStore.price} moedas de ouro! ✅`);
-            console.log(`\x1b[33m Seu ouro: ${player.gold} \x1b[0m💰`);
+            console.log(`\x1b[33mSeu ouro: ${player.gold} 💰\x1b[0m`);
     
         }else{
-            console.log("\x1b[33m Ouro insuficiente! \x1b[0m💰");
+            console.log("\x1b[33mOuro insuficiente! 💰\x1b[0m");
         }
     
         saveData(player);

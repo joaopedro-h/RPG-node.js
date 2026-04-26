@@ -19,8 +19,8 @@ function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
                     
         if (enemy.hp <= 0) {  /* Caso o inimigo chegue a 0 de vida ele é derrotado, dropando XP ao jogador. */
 
-            console.log(`\x1b[36m Você derrotou o ${enemy.name}! \x1b[0m 🏆` );
-            console.log(`\x1b[36m XP obtido na luta: ${enemy.xp} \x1b[0m ⭐`);
+            console.log(`\x1b[33m Você derrotou o ${enemy.name}! \x1b[0m 🏆` );
+            console.log(`\x1b[33m XP obtido na luta: ${enemy.xp} \x1b[0m ⭐`);
             player.xp += enemy.xp;
 
             

@@ -1,13 +1,22 @@
 {
   "name": "Player1",
-  "hp": 67,
+  "hp": 105,
   "maxHp": 105,
   "attack": 18,
   "defense": 10,
-  "gold": 498210,
-  "xp": 150,
+  "gold": 347924,
+  "xp": 5,
   "level": 2,
   "inventory": [
+    {
+      "name": "Espada de ferro 🗡️ ",
+      "type": "weapon",
+      "value": 20,
+      "quantity": 1,
+      "description": "Aumenta 25 de dano no ataque 💥",
+      "price": 450,
+      "equipped": true
+    },
     {
       "name": "Escudo de madeira 🛡️",
       "type": "defense",
@@ -15,23 +24,15 @@
       "quantity": 1,
       "description": "Aumenta 20 de defesa 💥",
       "price": 300,
-      "equipped": false
+      "equipped": true
     },
     {
       "name": "Poção de cura pequena 🧪",
       "type": "heal",
       "value": 20,
-      "quantity": 2,
+      "quantity": 1,
       "description": "Cura 20 de HP ❤️",
       "price": 200
-    },
-    {
-      "name": "Amuleto de vida ❤️ ",
-      "type": "accessory",
-      "value": 5,
-      "quantity": 1,
-      "description": "Aumenta 5 de HP máximo 🆙❤️",
-      "price": 1500
     }
   ]
 }

@@ -4,7 +4,7 @@ function equipItem(next, player, rl, pause, saveData) {
     console.log("🎒 INVENTÁRIO\n");
 
     if (player.inventory.length === 0) {  /* if para caso o inventário estiver vazio aparecer a mensagem informando sobre não ter nenhum item. */
-        console.log("Seu inventário está vazio! 🚫");
+        console.log("\x1b[91mSeu inventário está vazio! 🚫\x1b[0m");
         pause(rl, next);
         return;
 
@@ -25,7 +25,7 @@ function equipItem(next, player, rl, pause, saveData) {
         const item = player.inventory[i];  /* Variável "item" se torna o item do inventário da posição índice "i". */
 
         if (!item) { /* Significa = se o item NÃO existir o "if" é executado. */
-            console.log("Item inválido! ❌");
+            console.log("\x1b[91mItem não encontrado! ❌\x1b[0m");
             pause(rl, next);
             return;
         }

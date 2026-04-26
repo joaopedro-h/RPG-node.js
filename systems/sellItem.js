@@ -3,12 +3,12 @@ function sellItem(menuJogo, player, rl, pause, saveData) {
     console.clear();
     console.log("====================");
     console.log("COMERCIANTE 🧝🏽");
-    console.log(`Seu ouro: ${player.gold} 💰`);
+    console.log(`\x1b[33mSeu ouro: ${player.gold} 💰\x1b[0m`);
     console.log("====================\n");
     console.log("Itens disponíveis para venda: \n");
 
     if (player.inventory.length === 0) {
-        console.log("Nenhum item no inventário.");
+        console.log("\x1b[91mSeu inventário está vazio! 🚫\x1b[0m");
         pause(rl, () => menuJogo(player));
         return;
     }
@@ -33,7 +33,7 @@ function sellItem(menuJogo, player, rl, pause, saveData) {
         }
 
         if (!itemPlayer) {
-            console.log("Item não encontrado! ❌");
+            console.log("\x1b[91mItem não encontrado! ❌\x1b[0m");
             pause(rl, () => menuJogo(player));
             return;
 
@@ -45,7 +45,7 @@ function sellItem(menuJogo, player, rl, pause, saveData) {
             
             console.clear();
             console.log(`Você vendeu ${itemPlayer.name} por ${sellPrice} moedas de ouro 💰`);
-            console.log(`\x1b[33m Seu ouro: ${player.gold} \x1b[0m💰`);
+            console.log(`\x1b[33mSeu ouro: ${player.gold} 💰\x1b[0m`);
 
             if (itemPlayer.quantity === 0) {
                 player.inventory.splice(i, 1);

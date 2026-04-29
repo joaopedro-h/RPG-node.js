@@ -11,6 +11,23 @@ function playerStatus(menuJogo, player, rl, pause) {
         console.log(`⭐ XP: ${player.xp}`); 
         console.log(`🏆 Nível: ${player.level}`);
         
+
+        console.log("\n===== BUILD DO PERSONAGEM =====\n");
+        
+        player.inventory.forEach((item) => {
+            if (item.type === "weapon" || item.type === "defense" ) {
+
+                if (item.equipped === true) {
+                        item.equipped = "Equipado"
+                }else{
+                        item.equipped = "Desequipado"
+                }
+
+                console.log(`${item.name}  = ${item.equipped}`);
+                console.log(`${item.description}\n`);
+            }
+        });
+
         pause(rl, () => menuJogo(player));
 }
 

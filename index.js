@@ -12,7 +12,7 @@ const explore = require("./systems/explore");
 const inventory = require("./systems/inventory");
 const playerStatus = require("./systems/playerStatus");
 const useItem = require('./systems/useItem');
-const equipItem = require("./systems/equipItem");
+const buildConfig = require("./systems/buildConfig");
 const store = require('./systems/store');
     
 const fs = require("fs");   
@@ -70,7 +70,7 @@ function menuJogo(player) { /* Criado o menu principal do jogo. */
   console.log("1. Explorar ⚔️");
   console.log("2. Inventário 🎒");
   console.log("3. Usar item ⚙️");
-  console.log("4. Equipar item ⚙️");
+  console.log("4. Configurar build 🔧");
   console.log("5. Status do personagem 👤");
   console.log("6. Loja 🏪");
   console.log("0. Sair ❌\n");
@@ -94,7 +94,7 @@ function menuJogo(player) { /* Criado o menu principal do jogo. */
                 break;
 
             case 4:
-                equipItem(() => menuJogo(player), player, rl, pause, saveData);
+                buildConfig(() => menuJogo(player), player, rl, pause, saveData);
                 break;
 
             case 5:

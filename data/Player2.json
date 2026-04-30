@@ -16,7 +16,7 @@
       "description": "Aumenta 25 de dano no ataque 💥",
       "price": 450,
       "equiped": true,
-      "equipped": true
+      "equipped": false
     },
     {
       "name": "Poção de XP 🧪 ⭐",

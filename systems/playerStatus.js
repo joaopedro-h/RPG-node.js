@@ -18,13 +18,14 @@ function playerStatus(menuJogo, player, rl, pause) {
             if (item.type === "weapon" || item.type === "defense" ) {
 
                 if (item.equipped === true) {
-                        item.equipped = "Equipado"
+                   console.log(`${item.name} = Equipado ✅`);
+                   console.log(`${item.description}\n`);
+                        
                 }else{
-                        item.equipped = "Desequipado"
+                   console.log(`${item.name}  = Desequipado ❌`);
+                   console.log(`${item.description}\n`);
                 }
 
-                console.log(`${item.name}  = ${item.equipped}`);
-                console.log(`${item.description}\n`);
             }
         });
 

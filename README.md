@@ -62,7 +62,7 @@ O projeto foi desenvolvido com foco em prática de lógica, organização de có
 1. Explorar 🗺️
 2. Inventário 🎒
 3. Usar item ⚙️
-4. Equipar item 🛡️
+4. Configurar build 🔧
 5. Status do personagem 🧙
 6. Loja 🏪
 0. Sair ❌
@@ -83,7 +83,9 @@ project/
 │
 ├── systems/
 │   ├── battle.js
+│   ├── buildConfig.js
 │   ├── buyItem.js
+│   ├── desequipItem.js
 │   ├── enemyEncounter.js
 │   ├── equipItem.js
 │   ├── escape.js

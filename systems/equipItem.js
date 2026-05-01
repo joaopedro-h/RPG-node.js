@@ -3,30 +3,41 @@ function equipItem(menuJogo, player, rl, pause, saveData) {
     console.clear();
     console.log("🎒 INVENTÁRIO\n");
 
+    let filteredItens = []; /* Array criado para armazenar só os itens específicos.*/
+    let counter = 1; /* Variável criada para organizar a posição de cada item na tela para o jogador. */
+
     if (player.inventory.length === 0) {  /* if para caso o inventário estiver vazio aparecer a mensagem informando sobre não ter nenhum item. */
-        console.log("\x1b[91mSeu inventário está vazio! 🚫\x1b[0m");
+        console.log("\x1b[91mVocê não possui itens equipáveis! 🚫\x1b[0m");
         pause(rl, () => menuJogo(player));
         return;
 
     }else{
         
-        player.inventory.forEach((item, index) => {  /* Inventário do jogador será exibido pelo "forEach".*/
+        player.inventory.forEach((item) => {  /* Inventário do jogador será exibido pelo "forEach".*/
             if ((item.type === "weapon" || item.type === "defense")) {
-                console.log(`${index + 1}. ${item.name}\n`);
+                console.log(`${counter}. ${item.name}\n`);
+                filteredItens.push(item); /* Armaneza somente os itens desejados. */
+                counter++; /* Faz a contagem de cada posição para o jogador. */
             }
         });
-
     }
+
+    console.log("\n0. Sair ❌\n");
 
     rl.question(`Qual item deseja equipar? `, (equippedItem) => {
 
-        const i = Number(equippedItem) - 1;
+        if (equippedItem === "0") { /* Se o usuário digitar "0" ele retorna para o menu. */
+            console.log("Saindo... 🏃🏻‍♂️‍➡️");
+            pause(rl, () => menuJogo(player));
+            return;
+        }
 
-        const item = player.inventory[i];  /* Variável "item" se torna o item do inventário da posição índice "i". */
+        const i = Number(equippedItem) - 1;
+        const item = filteredItens[i];  /* Variável "item" se torna o item do inventário da posição índice "i". */
 
         if (!item) { /* Significa = se o item NÃO existir o "if" é executado. */
             console.log("\x1b[91mItem não encontrado! ❌\x1b[0m");
-            pause(rl, next);
+            pause(rl, () => menuJogo(player));
             return;
         }
 

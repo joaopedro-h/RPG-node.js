@@ -23,7 +23,8 @@ function buildConfig(menuJogo, player, rl, pause, saveData) {
     console.log("=================================\n");
     
     console.log("1. Equipar item ✅");  /* Mostra ao jogador as opções para equipar/desequipar itens. */
-    console.log("2. Desequipar item ❌\n");
+    console.log("2. Desequipar item ❌");
+    console.log("0. Sair ❌\n");
     
     rl.question(`Escolha uma opção: `, (opcao) => {
 
@@ -36,7 +37,12 @@ function buildConfig(menuJogo, player, rl, pause, saveData) {
         }else if (opcao === 2) {
             desequipItem(menuJogo, player, rl, pause, saveData);
             return;
-
+        
+        }else if (opcao === 0) {
+            console.log("Saindo... 🏃🏻‍♂️‍➡️");
+            pause(rl, () => menuJogo(player));
+            return;
+            
         }else {
             console.log("Opção inválida!");
             buildConfig(menuJogo, player, rl, pause, saveData);

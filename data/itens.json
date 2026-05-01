@@ -5,7 +5,7 @@
      "quantity": 1,
      "description": "Cura 20 de HP ❤️",
      "price": 200,
-     "chance": 0.45
+     "chance": 0.40
     },
 
     {"name": "Poção de cura grande 🧪",
@@ -32,15 +32,25 @@
      "quantity": 1,
      "description": "Aumenta 50 de XP ⭐",
      "price": 300,
-     "chance": 0.10
+     "chance": 0.05
     },
 
     {"name": "Espada de ferro 🗡️ ",
      "type": "weapon",
      "value": 20,
      "quantity": 1,
-     "description": "Aumenta 25 de dano no ataque 💥",
+     "description": "Aumenta 20 de dano no ataque 💥",
      "price": 450,
+     "chance": 0.05,
+     "equipped": false
+    },
+
+    {"name": "Espada de madeira 🗡️ ",
+     "type": "weapon",
+     "value": 15,
+     "quantity": 1,
+     "description": "Aumenta 15 de dano no ataque 💥",
+     "price": 300,
      "chance": 0.10,
      "equipped": false
     },
@@ -49,9 +59,19 @@
      "type": "defense",
      "value": 15,
      "quantity": 1,
-     "description": "Aumenta 20 de defesa 💥",
+     "description": "Aumenta 15 de defesa 💥",
      "price": 300,
      "chance": 0.10,
+     "equipped": false
+    }, 
+
+    {"name": "Escudo de ferro 🛡️",
+     "type": "defense",
+     "value": 20,
+     "quantity": 1,
+     "description": "Aumenta 20 de defesa 💥",
+     "price": 450,
+     "chance": 0.05,
      "equipped": false
     }
 ]

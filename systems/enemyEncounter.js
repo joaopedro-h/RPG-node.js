@@ -22,7 +22,8 @@ function enemyEncounter(menuJogo, player, rl, saveData) {
                 enemyData.type,
                 enemyData.hp,
                 enemyData.attack,
-                enemyData.xp
+                enemyData.xp,
+                enemyData.gold
             );
             break; /* break para o loop imediatamente, evitando trocar o inimigo. */
         }

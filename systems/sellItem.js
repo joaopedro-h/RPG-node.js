@@ -19,7 +19,7 @@ function sellItem(menuJogo, player, rl, pause, saveData) {
         console.log(`x${sellPrice} 💰\n`);
     });
 
-    console.log("\n0. Sair ❌");
+    console.log("\n0. Sair ❌\n");
 
     rl.question(`\nQual item deseja vender? `, (sellItem) => {
 

@@ -22,11 +22,12 @@ function battle(menuJogo, player, rl, enemy, turn, pause, saveData) {
                     
         if (enemy.hp <= 0) {  /* Caso o inimigo chegue a 0 de vida ele é derrotado, dropando XP ao jogador. */
 
-            console.log(`\x1b[93m Você derrotou o ${enemy.name}! \x1b[0m 🏆` );
-            console.log(`\x1b[93m XP obtido na luta: ${enemy.xp} \x1b[0m ⭐`);
+            console.log(`\x1b[93m Você derrotou o ${enemy.name}! \x1b[0m🏆` );
+            console.log(`\x1b[93m XP obtido na luta: ${enemy.xp} \x1b[0m⭐`);
+            console.log(`\x1b[93m Ouro obtido na luta: ${enemy.gold} \x1b[0m💰`);
             player.xp += enemy.xp;
+            player.gold += enemy.gold;
 
-            
             while (player.xp >= player.level * 100) { /* Enquanto o XP do jogador for maior que o XP necessário o nível continuará subindo. */
                 const xpNextLevel = player.level * 100; /* Cria modelo de nível, a cada novo nível será necessário +100 de XP para upar. */
                 player.xp -= xpNextLevel; /* Desconta o XP do jogador. */

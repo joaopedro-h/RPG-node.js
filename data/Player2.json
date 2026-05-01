@@ -4,8 +4,8 @@
   "maxHp": 120,
   "attack": 18,
   "defense": 10,
-  "gold": 1525,
-  "xp": 475,
+  "gold": 75,
+  "xp": 505,
   "level": 6,
   "inventory": [
     {
@@ -16,7 +16,7 @@
       "description": "Aumenta 25 de dano no ataque 💥",
       "price": 450,
       "equiped": true,
-      "equipped": false
+      "equipped": true
     },
     {
       "name": "Poção de XP 🧪 ⭐",

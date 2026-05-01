@@ -15,7 +15,7 @@ function buyItem(menuJogo, player, rl, pause, saveData) {
         console.log(`x${item.price} 💰\n`);
     });
     
-    console.log("\n0. Sair ❌");
+    console.log("\n0. Sair ❌\n");
 
     rl.question(`\nQual item deseja comprar? `, (buyItem) =>{
     
